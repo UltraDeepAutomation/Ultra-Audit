@@ -2,7 +2,7 @@
 
 ![Ultra-Audit](assets/cover.png)
 
-A Claude Code skill that audits a codebase for bugs the way a careful engineer would —
+A coding-agent skill that audits a codebase for bugs the way a careful engineer would —
 then fixes what it found, autonomously, in one uninterrupted run, with questions saved
 for the very end.
 

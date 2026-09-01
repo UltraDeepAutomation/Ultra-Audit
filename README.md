@@ -1,8 +1,14 @@
 # ultra-audit
 
-A Claude Code skill that runs an exhaustive bug audit of a codebase and then fixes
-what it found — autonomously, in one uninterrupted run, asking questions only at the
-very end.
+A Claude Code skill that audits a codebase for bugs the way a careful engineer would —
+then fixes what it found, autonomously, in one uninterrupted run, with questions saved
+for the very end.
+
+Asking an agent to "find bugs and fix them" usually returns a padded list, a few
+confident inventions, and no way to tell which is which. This skill is the same request
+with the failure modes closed: no target number to pad toward, a defect checklist to
+sweep, a confirmed-vs-hypothesis mark on every finding, an honest map of what was never
+looked at, and a ban on the fixes that merely hide a bug.
 
 > The skill body is written in Russian, because that is the language it was tuned in.
 > It works on codebases in any language. An English translation is welcome as a PR.

@@ -23,19 +23,19 @@
   <ellipse cx="800" cy="450" rx="520" ry="300" fill="url(#halo)" filter="url(#glow)"/>
 
   <!-- размытый дальний план -->
-  <g color="#7C3AED" opacity="0.7">
-    <use href="#lens" transform="translate(214 208) rotate(-24) scale(1.75)" filter="url(#deep)"/>
-    <use href="#lens" transform="translate(1402 700) rotate(14) scale(1.95)" filter="url(#deep)"/>
-    <use href="#lens" transform="translate(1330 176) rotate(-8) scale(1.1)" filter="url(#soft)"/>
-    <use href="#lens" transform="translate(268 712) rotate(32) scale(1.25)" filter="url(#soft)"/>
+  <g color="#7C3AED" opacity="0.5">
+    <use href="#lens" transform="translate(214 208) rotate(-24) scale(1.4)" filter="url(#deep)"/>
+    <use href="#lens" transform="translate(1402 700) rotate(14) scale(1.56)" filter="url(#deep)"/>
+    <use href="#lens" transform="translate(1330 176) rotate(-8) scale(0.88)" filter="url(#soft)"/>
+    <use href="#lens" transform="translate(268 712) rotate(32) scale(1.0)" filter="url(#soft)"/>
   </g>
 
   <!-- резкий передний план -->
-  <g color="#A78BFA" opacity="0.95">
-    <use href="#lens" transform="translate(452 296) rotate(-16) scale(0.72)"/>
-    <use href="#lens" transform="translate(1258 654) rotate(22) scale(0.86)"/>
-    <use href="#lens" transform="translate(1216 300) rotate(-34) scale(0.55)"/>
-    <use href="#lens" transform="translate(410 620) rotate(8) scale(0.6)"/>
+  <g color="#A78BFA" opacity="0.72">
+    <use href="#lens" transform="translate(452 296) rotate(-16) scale(0.576)"/>
+    <use href="#lens" transform="translate(1258 654) rotate(22) scale(0.688)"/>
+    <use href="#lens" transform="translate(1216 300) rotate(-34) scale(0.44)"/>
+    <use href="#lens" transform="translate(410 620) rotate(8) scale(0.48)"/>
   </g>
 
   <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">

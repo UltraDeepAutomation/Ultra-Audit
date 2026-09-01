@@ -1,4 +1,4 @@
-# ultra-audit
+# Ultra-Audit
 
 A Claude Code skill that audits a codebase for bugs the way a careful engineer would —
 then fixes what it found, autonomously, in one uninterrupted run, with questions saved
@@ -51,19 +51,23 @@ Design choices that matter:
 Personal (available in every project):
 
 ```bash
-git clone https://github.com/UltraDeepAutomation/ultra-audit.git ~/.claude/skills/ultra-audit
+git clone https://github.com/UltraDeepAutomation/Ultra-Audit.git ~/.claude/skills/Ultra-Audit
 ```
 
 Or per project:
 
 ```bash
-git clone https://github.com/UltraDeepAutomation/ultra-audit.git .claude/skills/ultra-audit
+git clone https://github.com/UltraDeepAutomation/Ultra-Audit.git .claude/skills/Ultra-Audit
 ```
+
+A skill is identified by its directory name, so the skill is invoked as
+`Ultra-Audit`. If your setup insists on lowercase skill names, clone into
+`~/.claude/skills/ultra-audit` instead — nothing else changes.
 
 Optional `/ultraaudit` slash command:
 
 ```bash
-cp ~/.claude/skills/ultra-audit/commands/ultraaudit.md ~/.claude/commands/ultraaudit.md
+cp ~/.claude/skills/Ultra-Audit/commands/ultraaudit.md ~/.claude/commands/ultraaudit.md
 ```
 
 ## Use

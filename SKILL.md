@@ -1,9 +1,9 @@
 ---
-name: ultra-audit
+name: Ultra-Audit
 description: Exhaustive bug audit of a codebase followed by fully autonomous fixing. Use when the user asks to audit a project for bugs, hunt down workarounds and half-finished work in recent commits, find SSOT violations or architectural drift, or requests a deep/full/"ultra" audit that also fixes what it finds. Also triggers on /ultraaudit.
 ---
 
-# Ultra Audit
+# Ultra-Audit
 
 Не ври и не подгоняй. Каждое число в отчёте — это то, что ты действительно посмотрел.
 Работа идёт в три фазы: обход → отчёт → починка. Ни одна не заменяет другую, ни одну

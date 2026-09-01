@@ -48,34 +48,55 @@ Design choices that matter:
 
 ## Install
 
-Personal (available in every project):
+### Claude Code
 
 ```bash
 git clone https://github.com/UltraDeepAutomation/Ultra-Audit.git ~/.claude/skills/Ultra-Audit
 ```
 
-Or per project:
+That is the whole install — ask for an audit in plain language and the skill triggers.
+A skill is identified by its directory name, so it is invoked as `Ultra-Audit`; if your
+setup insists on lowercase names, clone into `~/.claude/skills/ultra-audit` instead.
 
-```bash
-git clone https://github.com/UltraDeepAutomation/Ultra-Audit.git .claude/skills/Ultra-Audit
-```
-
-A skill is identified by its directory name, so the skill is invoked as
-`Ultra-Audit`. If your setup insists on lowercase skill names, clone into
-`~/.claude/skills/ultra-audit` instead — nothing else changes.
-
-Optional `/ultraaudit` slash command:
+For a `/ultraaudit` slash command as well:
 
 ```bash
 cp ~/.claude/skills/Ultra-Audit/commands/ultraaudit.md ~/.claude/commands/ultraaudit.md
 ```
 
-## Use
+### Any other agent
 
-Ask for it in plain language ("audit this project for bugs and fix them"), or run
-`/ultraaudit`. Narrow the scope with an argument:
+The skill is one Markdown procedure, so it fits any coding agent that reads rules from
+the repository. `install.sh` projects `SKILL.md` into the format your tool expects —
+there is no second copy of the rules anywhere.
 
 ```bash
+git clone https://github.com/UltraDeepAutomation/Ultra-Audit.git ~/.ultra-audit
+cd /path/to/your/project && ~/.ultra-audit/install.sh cursor
+```
+
+| Agent | Command | What it writes |
+| --- | --- | --- |
+| Claude Code, this project only | `install.sh claude` | `.claude/skills/Ultra-Audit/` |
+| Claude Code, every project | `install.sh claude-global` | `~/.claude/skills/Ultra-Audit/` |
+| Cursor | `install.sh cursor` | `.cursor/rules/ultra-audit.mdc` — call it with `@ultra-audit` |
+| Windsurf | `install.sh windsurf` | `.windsurf/rules/ultra-audit.md` |
+| Cline, Roo Code | `install.sh cline` | `.clinerules/ultra-audit.md` |
+| GitHub Copilot | `install.sh copilot` | `.github/prompts/ultra-audit.prompt.md` — call it with `/ultra-audit` |
+| Codex CLI and anything else reading `AGENTS.md` | `install.sh agents` | appends a marked section to `AGENTS.md` |
+| Gemini CLI | `install.sh gemini` | appends a marked section to `GEMINI.md` |
+| ChatGPT, Claude.ai, any chat | `install.sh print` | prints the procedure to stdout — paste it in |
+
+Every command takes an optional project directory as its second argument and defaults
+to the current one. Appends are marked with an HTML comment, so re-running the
+installer refuses to duplicate a section instead of quietly doubling it.
+
+## Use
+
+Ask for it in plain language ("audit this project for bugs and fix them"), or run the
+slash command your tool installed. Narrow the scope with an argument:
+
+```text
 /ultraaudit packages/engine
 ```
 
@@ -87,11 +108,14 @@ table, just a smaller area.
 This is not a quick lint. On a real codebase it reads a lot of code, writes a detailed
 report, and then makes a series of commits. Give it a clean working tree, or a branch.
 
-## Files
+## What is in the repo
 
-- `SKILL.md` — the procedure. The only source of truth for it.
-- `reference/report-template.md` — skeleton of the seven-section audit report.
-- `commands/ultraaudit.md` — thin slash-command wrapper that invokes the skill.
+- [`SKILL.md`](SKILL.md) — the procedure itself, and the only source of truth for it.
+- [`install.sh`](install.sh) — projects `SKILL.md` into each agent's format.
+- [`reference/report-template.md`](reference/report-template.md) — skeleton of the
+  seven-section audit report.
+- [`commands/ultraaudit.md`](commands/ultraaudit.md) — slash-command wrapper that
+  invokes the skill and deliberately holds no second copy of the rules.
 
 ## По-русски
 
